@@ -40,8 +40,8 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/resource"
 	"github.com/crossplane/crossplane-runtime/pkg/test"
 
-	"github.com/crossplane-contrib/provider-kubernetes/apis/object/v1alpha1"
-	kubernetesv1alpha1 "github.com/crossplane-contrib/provider-kubernetes/apis/v1alpha1"
+	"github.com/upbound/provider-kubernetes/apis/object/v1alpha1"
+	kubernetesv1alpha1 "github.com/upbound/provider-kubernetes/apis/v1alpha1"
 )
 
 const (
@@ -107,10 +107,10 @@ func kubernetesObject(om ...kubernetesObjectModifier) *v1alpha1.Object {
 
 func externalResource(rm ...externalResourceModifier) *unstructured.Unstructured {
 	res := &unstructured.Unstructured{
-		Object: map[string]interface{}{
+		Object: map[string]any{
 			"apiVersion": "v1",
 			"kind":       "Namespace",
-			"metadata": map[string]interface{}{
+			"metadata": map[string]any{
 				"name": "crossplane-system",
 			},
 		},
@@ -123,10 +123,10 @@ func externalResource(rm ...externalResourceModifier) *unstructured.Unstructured
 	return res
 }
 
-func externalResourceWithLastAppliedConfigAnnotation(val interface{}) *unstructured.Unstructured {
+func externalResourceWithLastAppliedConfigAnnotation(val any) *unstructured.Unstructured {
 	res := externalResource(func(res *unstructured.Unstructured) {
-		metadata := res.Object["metadata"].(map[string]interface{})
-		metadata["annotations"] = map[string]interface{}{
+		metadata := res.Object["metadata"].(map[string]any)
+		metadata["annotations"] = map[string]any{
 			corev1.LastAppliedConfigAnnotation: val,
 		}
 	})
@@ -155,21 +155,21 @@ func objectReferences() []v1alpha1.Reference {
 
 func referenceObject(rm ...externalResourceModifier) *unstructured.Unstructured {
 	obj := &unstructured.Unstructured{
-		Object: map[string]interface{}{
+		Object: map[string]any{
 			"apiVersion": v1alpha1.SchemeGroupVersion.String(),
 			"kind":       v1alpha1.ObjectKind,
-			"metadata": map[string]interface{}{
+			"metadata": map[string]any{
 				"name":      testReferenceObjectName,
 				"namespace": testNamespace,
 			},
-			"spec": map[string]interface{}{
-				"forProvider": map[string]interface{}{
-					"manifest": map[string]interface{}{
+			"spec": map[string]any{
+				"forProvider": map[string]any{
+					"manifest": map[string]any{
 						"apiVersion": "v1",
 						"kind":       "ConfigMap",
-						"metadata": map[string]interface{}{
+						"metadata": map[string]any{
 							"namespace": testNamespace,
-							"labels": map[string]interface{}{
+							"labels": map[string]any{
 								"app": "foo",
 							},
 						},
@@ -186,10 +186,10 @@ func referenceObject(rm ...externalResourceModifier) *unstructured.Unstructured 
 	return obj
 }
 
-func referenceObjectWithFinalizer(val interface{}) *unstructured.Unstructured {
+func referenceObjectWithFinalizer(val any) *unstructured.Unstructured {
 	res := referenceObject(func(res *unstructured.Unstructured) {
-		metadata := res.Object["metadata"].(map[string]interface{})
-		metadata["finalizers"] = []interface{}{val}
+		metadata := res.Object["metadata"].(map[string]any)
+		metadata["finalizers"] = []any{val}
 	})
 	return res
 }

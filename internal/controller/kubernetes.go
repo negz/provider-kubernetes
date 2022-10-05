@@ -21,8 +21,8 @@ import (
 
 	"github.com/crossplane/crossplane-runtime/pkg/controller"
 
-	"github.com/crossplane-contrib/provider-kubernetes/internal/controller/config"
-	"github.com/crossplane-contrib/provider-kubernetes/internal/controller/object"
+	"github.com/upbound/provider-kubernetes/internal/controller/config"
+	"github.com/upbound/provider-kubernetes/internal/controller/object"
 )
 
 // Setup creates all Template controllers with the supplied logger and adds them to

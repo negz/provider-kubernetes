@@ -20,8 +20,8 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	objectv1alpha1 "github.com/crossplane-contrib/provider-kubernetes/apis/object/v1alpha1"
-	templatev1alpha1 "github.com/crossplane-contrib/provider-kubernetes/apis/v1alpha1"
+	objectv1alpha1 "github.com/upbound/provider-kubernetes/apis/object/v1alpha1"
+	templatev1alpha1 "github.com/upbound/provider-kubernetes/apis/v1alpha1"
 )
 
 func init() {

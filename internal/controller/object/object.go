@@ -39,10 +39,10 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/reconciler/managed"
 	"github.com/crossplane/crossplane-runtime/pkg/resource"
 
-	"github.com/crossplane-contrib/provider-kubernetes/apis/object/v1alpha1"
-	apisv1alpha1 "github.com/crossplane-contrib/provider-kubernetes/apis/v1alpha1"
-	"github.com/crossplane-contrib/provider-kubernetes/internal/clients"
-	"github.com/crossplane-contrib/provider-kubernetes/internal/clients/gke"
+	"github.com/upbound/provider-kubernetes/apis/object/v1alpha1"
+	apisv1alpha1 "github.com/upbound/provider-kubernetes/apis/v1alpha1"
+	"github.com/upbound/provider-kubernetes/internal/clients"
+	"github.com/upbound/provider-kubernetes/internal/clients/gke"
 )
 
 const (

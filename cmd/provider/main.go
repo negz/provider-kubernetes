@@ -34,8 +34,8 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/logging"
 	"github.com/crossplane/crossplane-runtime/pkg/ratelimiter"
 
-	"github.com/crossplane-contrib/provider-kubernetes/apis"
-	object "github.com/crossplane-contrib/provider-kubernetes/internal/controller"
+	"github.com/upbound/provider-kubernetes/apis"
+	object "github.com/upbound/provider-kubernetes/internal/controller"
 )
 
 func main() {
