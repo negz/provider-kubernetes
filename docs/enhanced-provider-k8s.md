@@ -24,7 +24,7 @@ This document is aimed to explain how to manage arbitrary Kubernetes resources u
 
 ## About Provider Kubernetes
 
-The Crossplane Provider [provider-kubernetes](https://github.com/crossplane-contrib/provider-kubernetes) is designed to enable deployment and management of arbitrary Kubernetes resources in clusters. It defines an `Object` resource type which represents arbitrary Kubernetes resources, then uses a Kubernetes controller to reconcile `Object` typed resources to manage the corresponding Kubernetes resources.
+The Crossplane Provider [provider-kubernetes](https://github.com/upbound/provider-kubernetes) is designed to enable deployment and management of arbitrary Kubernetes resources in clusters. It defines an `Object` resource type which represents arbitrary Kubernetes resources, then uses a Kubernetes controller to reconcile `Object` typed resources to manage the corresponding Kubernetes resources.
 
 As an example, below YAML manifest defines an `Object` which represents a Kubernetes namesapce.
 
@@ -72,7 +72,7 @@ The enhanced Provider Kubernetes provides a couple of new features to help you m
 * It allows you to define fine-grained resource management policy to instruct the provider how to manage Kubernetes resources.
 * It allows you to define resource references for current `Object` as dependencies to retrieve values from dependant resources at runtime and guarantee the resource rendering in a specified order.
 
-Note: These new features are implemented in [this git repository](https://github.com/morningspace/provider-kubernetes) at the moment which is forked from [the upstream repository](https://github.com/crossplane-contrib/provider-kubernetes) in Crossplane community. It
+Note: These new features are implemented in [this git repository](https://github.com/morningspace/provider-kubernetes) at the moment which is forked from [the upstream repository](https://github.com/upbound/provider-kubernetes) in Crossplane community. It
 has not been merged into the community version yet.
 
 In order to better understand how these features can help to manage Kubernetes resources, I will use a demo project called [capabilities-shim](https://github.com/morningspace/capabilities-shim) to describe the problems that I experienced and how the enhanced provider can help to address these problems.

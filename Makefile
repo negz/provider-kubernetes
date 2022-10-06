@@ -2,7 +2,7 @@ GOLANGCILINT_VERSION ?= 1.50.0
 GO_REQUIRED_VERSION ?= 1.19
 # Project Setup
 PROJECT_NAME := provider-kubernetes
-PROJECT_REPO := github.com/crossplane-contrib/$(PROJECT_NAME)
+PROJECT_REPO := github.com/upbound/$(PROJECT_NAME)
 
 PLATFORMS ?= linux_amd64 linux_arm64
 
@@ -51,10 +51,10 @@ IMAGES = provider-kubernetes
 # ====================================================================================
 # Setup XPKG
 
-XPKG_REG_ORGS ?= xpkg.upbound.io/crossplane-contrib index.docker.io/crossplanecontrib
+XPKG_REG_ORGS ?= xpkg.upbound.io/upbound index.docker.io/crossplanecontrib
 # NOTE(hasheddan): skip promoting on xpkg.upbound.io as channel tags are
 # inferred.
-XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/crossplane-contrib
+XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/upbound
 XPKGS = provider-kubernetes
 -include build/makelib/xpkg.mk
 
