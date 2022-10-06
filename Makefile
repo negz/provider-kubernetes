@@ -13,6 +13,13 @@ PLATFORMS ?= linux_amd64 linux_arm64
 -include build/makelib/common.mk
 
 # ====================================================================================
+# Setup XPKG
+
+XPKG_REGISTRY ?= xpkg.upbound.io
+XPKG_ORG ?= upbound
+XPKG_REPO ?= $(PROJECT_NAME)
+
+# ====================================================================================
 # Setup Output
 
 -include build/makelib/output.mk
