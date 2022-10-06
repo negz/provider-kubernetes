@@ -3,7 +3,7 @@ name: RC
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   # Common versions
